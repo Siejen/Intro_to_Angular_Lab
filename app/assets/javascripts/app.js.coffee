@@ -37,8 +37,10 @@ AngularLab.controller "IndexCtrl", [ '$scope', ($scope) ->
 	$scope.hideWord = () ->
 		$scope.defaultFormTxt = ""
 
-	$scope.word = false
+	# $scope.word = false
+	# $scope.submit = ->
+	# 	$scope.word = true
 	$scope.submit = ->
-		$scope.word = true
+		$('#word').val -> ""
 
 ]
