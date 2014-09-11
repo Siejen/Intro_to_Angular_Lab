@@ -1,16 +1,104 @@
 <h1>Home#index</h1>
 
-{{data}}
-
-<!-- <input type="text" ng-model="taco">
-{{taco}} -->
-
 <div ng-controller ="IndexCtrl">
-<!-- 	<input type="checkbox" ng-model= "checked" id="check"><label for="check">Show Text?
-	</label> -->
 
-<h2>Here are my favorite movies</h2>
+<h2>My favorite movies | Objective 4</h2>
 <div ng-repeat = "favoriteMovie in favoriteMovies">
 	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}</span>
 </div>
+
+<br/>
+<br/>
+
+<h2>Resetting the Background Color | Objective 5</h2>
+<div ng-style="myStyle">Sample Text
+<br/>
+<br/>
+<br/>
+<br/>
+<input type="button" value="set red"        ng-click="myStyle={'backgroundColor':'red'}">
+<input type="button" value="set blue" ng-click="myStyle={'backgroundColor':'blue'}">
+<input type="button" value="clear" ng-click="myStyle={}">
+<br/>
+</div>
+
+<br/>
+<br/>
+
+
+<h2>My favorite movies | Objective 6</h2>
+<div ng-repeat = "favoriteMovie in favoriteMovies | orderBy: 'name' | limitTo: 3 ">
+	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}</span>
+</div>
+
+<br/>
+<br/>
+
+<h2>My favorite movies | Objective 7</h2>
+<div ng-repeat = "favoriteMovie in favoriteMovies | orderBy: 'name'">
+	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name.split("").reverse().join("") }}</span>
+</div>
+
+<br/>
+<br/>
+
+<h2>Remove from Favorite Movies List | Objective 8</h2>
+<div ng-repeat = "favoriteMovie in favoriteMovies | orderBy: 'name' ">
+	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}</span>
+	<button ng-click = "removeFavorite(favoriteMovie)">Remove From List</button>
+	<br/>
+	<br/>	
+</div>
+
+<br/>
+<br/>
+
+<h2>We have {{favoriteMovies.length}} 
+<ng-pluralize count = "favoriteMovies.length" when = "{'1' : 'Favorite Movie', 'other' : 'Favorite Movies'}">
+</ng-pluralize>
+| Objective 9</h2>
+<div ng-repeat = "favoriteMovie in favoriteMovies | orderBy: 'name' ">
+	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}</span>
+	<button ng-click = "removeFavorite(favoriteMovie)">Remove From List</button>
+	<br/>
+	<br/>	
+</div>
+
+<br/>
+<br/>
+
+<h2>Displaying Checked List of Movies and Hiding Unchecked List | Objective 10</h2>
+	
+	<div ng-repeat = "favoriteMovie in favoriteMovies">
+	<span ng-show="checked" ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}
+	</span>
+	</div>
+
+	<input type="checkbox" ng-model= "checked" id="check"><label for="check">Show List of Movies?</label>
+
+<br/>
+<br/>
+
+<h2>Incrementing Letter Count and ng-keypress | Objective 11</h2>
+<input ng-keypress="count = count + 1" ng-init="count=0">
+key press count: {{count}}
+
+<br/>
+<br/>
+
+<h2>Create a Form for Word Intake and Hide Word When Submitted | Objective 12</h2>
+
+<form ng-submit="query">
+<label for="word">
+Enter a Word: <input type="text" ng-hide="word" id="word" /></label>
+<button ng-click="submit()">Submit</button>
+</form>
+<br/>
+<br/>
+
+
+
+
+
+
 
