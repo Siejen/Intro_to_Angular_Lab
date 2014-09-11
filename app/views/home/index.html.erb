@@ -1,0 +1,16 @@
+<h1>Home#index</h1>
+
+{{data}}
+
+<!-- <input type="text" ng-model="taco">
+{{taco}} -->
+
+<div ng-controller ="IndexCtrl">
+<!-- 	<input type="checkbox" ng-model= "checked" id="check"><label for="check">Show Text?
+	</label> -->
+
+<h2>Here are my favorite movies</h2>
+<div ng-repeat = "favoriteMovie in favoriteMovies">
+	<span ng-style = "{color: '{{favoriteMovie.style}}'}">{{favoriteMovie.name}}</span>
+</div>
+
